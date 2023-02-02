@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://catoliver.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://catoliver.github.io/" rel="alternate" type="text/html" /><updated>2023-02-02T08:54:03+00:00</updated><id>https://catoliver.github.io/feed.xml</id><title type="html">catoliver’s blog</title><subtitle>个人博客</subtitle><author><name>catoliver</name></author><entry><title type="html">Git配置</title><link href="https://catoliver.github.io/blog/cn/2020/09/23/Git-config" rel="alternate" type="text/html" title="Git配置" /><published>2020-09-23T06:00:00+00:00</published><updated>2020-09-23T06:00:00+00:00</updated><id>https://catoliver.github.io/blog/cn/2020/09/23/Git-config</id><content type="html" xml:base="https://catoliver.github.io/blog/cn/2020/09/23/Git-config"><![CDATA[<p>主要是记录git的首次配置</p>
+
+<p><strong>1. 用户信息配置</strong></p>
+
+<p>配置用户名称和电子邮件地址：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"username"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"emial@example.com"</span>
+</code></pre></div></div>
+
+<p>查看用户配置</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span>
+</code></pre></div></div>
+<!-- more -->
+<p><strong>2. 生成新 SSH 密钥并添加到 ssh-agent</strong></p>
+
+<p>生成新SSH 密钥</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096 <span class="nt">-C</span> <span class="s2">"email@example.com"</span>
+</code></pre></div></div>
+
+<p>将SSH 密钥添加到 ssh-agent</p>
+
+<p>确保ssh-agent正在运行</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">eval</span> <span class="si">$(</span>ssh-agent <span class="nt">-s</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p>将 SSH 私钥添加到 ssh-agent</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa
+</code></pre></div></div>
+
+<p><strong>3. 将 SSH 密钥添加到 GitHub 帐户</strong></p>
+
+<p><strong>4 .测试您的SSH连接</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-T</span> git@github.com
+</code></pre></div></div>
+
+<p><strong>5. Git 基本操作</strong></p>
+
+<p>初始化仓库</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init 
+</code></pre></div></div>
+
+<p>克隆仓库</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone
+</code></pre></div></div>
+<p>下载远程代码并合并</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin master
+</code></pre></div></div>
+
+<p>添加文件到暂存区，将暂存区内容添加到仓库中</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit  <span class="nt">-m</span> <span class="s1">'msg'</span>
+</code></pre></div></div>
+<p>上传远程代码并合并</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin master
+</code></pre></div></div>]]></content><author><name>catoliver</name></author><category term="编程" /><category term="git" /><summary type="html"><![CDATA[主要是记录git的首次配置 1. 用户信息配置 配置用户名称和电子邮件地址： git config --global user.name "username" git config --global user.email "emial@example.com" 查看用户配置 git config --list]]></summary></entry></feed>
